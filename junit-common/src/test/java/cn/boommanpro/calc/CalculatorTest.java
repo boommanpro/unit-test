@@ -1,6 +1,7 @@
-package cn.boommanpro;
+package cn.boommanpro.calc;
 
 
+import cn.boommanpro.calc.Calculator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

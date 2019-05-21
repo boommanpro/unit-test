@@ -1,4 +1,4 @@
-package cn.boommanpro;
+package cn.boommanpro.calc;
 
 /**
  * @author BoomManPro
