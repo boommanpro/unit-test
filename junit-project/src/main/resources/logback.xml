@@ -8,17 +8,16 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
     <!-- 定义日志的根目录 -->
     <property name="LOG_HOME" value="/app/log" />
     <!-- 定义日志文件名称 -->
-    <property name="appName" value="SkyTest"/>
+    <property name="appName" value="unit-test"/>
     <!-- ch.qos.logback.core.ConsoleAppender 表示控制台输出 -->
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
-
         <!--
         日志输出格式：%d表示日期时间，%thread表示线程名，%-5level：级别从左显示5个字符宽度
         %logger{50} 表示logger名字最长50个字符，否则按照句点分割。 %msg：日志消息，%n是换行符
         -->
-        <layout class="ch.qos.logback.classic.PatternLayout">
+        <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
-        </layout>
+        </encoder>
     </appender>
 
     <!-- 滚动记录文件，先将日志记录到指定文件，当符合某个条件时，将日志记录到其他文件 -->
@@ -34,26 +33,21 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
             滚动时产生的文件的存放位置及文件名称 %d{yyyy-MM-dd}：按天进行日志滚动
             %i：当文件大小超过maxFileSize时，按照i进行文件滚动
             -->
-            <fileNamePattern>${LOG_HOME}/${appName}-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/${appName}.%d{yyyy-MM-dd}.log</fileNamePattern>
             <!--
             可选节点，控制保留的归档文件的最大数量，超出数量就删除旧文件。假设设置每天滚动，
             且maxHistory是365，则只保存最近365天的文件，删除之前的旧文件。注意，删除旧文件是，
             那些为了归档而创建的目录也会被删除。
             -->
             <MaxHistory>365</MaxHistory>
-            <!--
-            当日志文件超过maxFileSize指定的大小是，根据上面提到的%i进行日志文件滚动 注意此处配置SizeBasedTriggeringPolicy是无法实现按文件大小进行滚动的，必须配置timeBasedFileNamingAndTriggeringPolicy
-            -->
-            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>100MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
+            <totalSizeCap>3GB</totalSizeCap>
         </rollingPolicy>
         <!--
         日志输出格式：%d表示日期时间，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %logger{50} 表示logger名字最长50个字符，否则按照句点分割。 %msg：日志消息，%n是换行符
         -->
-        <layout class="ch.qos.logback.classic.PatternLayout">
+        <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [ %thread ] - [ %-5level ] [ %logger{50} : %line ] - %msg%n</pattern>
-        </layout>
+        </encoder>
     </appender>
 
     <!--
@@ -62,14 +56,7 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
     level：要记录的日志级别，包括 TRACE < DEBUG < INFO < WARN < ERROR
     additivity：作用在于children-logger是否使用 rootLogger配置的appender进行输出，false：表示只用当前logger的appender-ref，true：表示当前logger的appender-ref和rootLogger的appender-ref都有效
     -->
-    <!-- hibernate logger -->
-    <logger name="org.hibernate" level="error" />
-    <!-- Spring framework logger -->
-    <logger name="org.springframework" level="debug" additivity="false"/>
 
-    <logger name="com.creditease" level="info" additivity="true">
-        <appender-ref ref="appLogAppender" />
-    </logger>
 
     <!--
     root与logger是父子关系，没有特别定义则默认为root，任何一个类只会和一个logger对应，
@@ -79,6 +66,8 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
         <appender-ref ref="stdout" />
         <appender-ref ref="appLogAppender" />
     </root>
+    <!-- Spring framework logger -->
+    <logger name="org.springframework" level="debug" additivity="false"/>
 
     <!-- show parameters for hibernate sql 专为 Hibernate 定制 -->
     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" />
