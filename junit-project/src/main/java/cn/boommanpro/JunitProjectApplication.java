@@ -4,13 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Scanner;
+import java.util.Optional;
 
 /**
  * @author BoomManPro
@@ -23,9 +23,9 @@ public class JunitProjectApplication {
         ConfigurableApplicationContext context = new SpringApplication(JunitProjectApplication.class).run();
         try {
             String host = InetAddress.getLocalHost().getHostAddress();
-            TomcatServletWebServerFactory tomcatServletWebServerFactory = (TomcatServletWebServerFactory) context.getBean("tomcatServletWebServerFactory");
-            int port = tomcatServletWebServerFactory.getPort();
-            String contextPath = tomcatServletWebServerFactory.getContextPath();
+            ServerProperties serverProperties = context.getBean(ServerProperties.class);
+            int port = Optional.ofNullable(serverProperties.getPort()).orElse(8080);
+            String contextPath = Optional.ofNullable(serverProperties.getServlet().getContextPath()).orElse("");
             log.info("<------------------------------------------ http://{}:{}{}/ ------------------------------------------>", host, port, contextPath);
         } catch (UnknownHostException e) {
             log.error("项目启动异常", e);
