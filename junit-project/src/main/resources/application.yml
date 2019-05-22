@@ -8,3 +8,9 @@ spring:
 logging:
   path: calsspath:logback.xml
 
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+
+debug: true
