@@ -20,6 +20,40 @@
         <module>junit-h2</module>
         <module>junit-project</module>
     </modules>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <aggregate>true</aggregate>
+                    <tags>
+                        <tag>
+                            <name>mail</name>
+                            <placement>t</placement>
+                            <head>标识类的创建人</head>
+                        </tag>
+                        <tag>
+                            <name>description</name>
+                            <placement>a</placement>
+                            <head>描述信息</head>
+                        </tag>
+                        <tag>
+                            <name>create</name>
+                            <placement>a</placement>
+                            <head>创建时间</head>
+                        </tag>
+                    </tags>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
