@@ -33,17 +33,18 @@ public class AccountController {
 
     @PostMapping("save")
     public CallResult save(AccountForm accountForm) {
-        return CallResult.success();
+        return CallResult.success(accountService.save(accountForm.convertToAccount()));
     }
 
     @PostMapping("delete")
     public CallResult delete(@RequestParam Integer accountId) {
-        return CallResult.success();
+
+        return CallResult.success(accountService.delete(accountId));
     }
 
     @PostMapping("update")
     public CallResult update(Account account) {
-        return CallResult.success();
+        return CallResult.success(accountService.update(account));
     }
 
 }

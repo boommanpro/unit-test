@@ -16,4 +16,10 @@ public interface AccountService {
      * @return Page<Account>
      */
     Page<Account> queryAll(PageRequest page);
+
+    Account save(Account account);
+
+    Integer delete(Integer accountId);
+
+    Account update(Account account);
 }
