@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
 /**
- *
+ * ExceptionTest
  *
  * @author <a href="mailto:boommanpro@gmail.com">BoomManPro</a>
  * @data 2019/5/23 19:51

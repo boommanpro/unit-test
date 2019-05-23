@@ -1,9 +1,13 @@
 package cn.boommanpro.calc;
 
+
 /**
- * @author BoomManPro
+ * Calculator
  *
- * from https://github.com/junit-team/junit4/wiki/Getting-started
+ * @author <a href="mailto:boommanpro@gmail.com">BoomManPro</a>
+ * @data 2019/5/23
+ * @from https://github.com/junit-team/junit4/wiki/Getting-started
+ * @since 1.0.0
  */
 public class Calculator {
     public int evaluate(String expression) {

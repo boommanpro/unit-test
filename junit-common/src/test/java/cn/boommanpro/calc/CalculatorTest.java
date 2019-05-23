@@ -5,6 +5,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * CalculatorTest
+ *
+ * @author <a href="mailto:boommanpro@gmail.com">BoomManPro</a>
+ * @data 2019/5/23
+ * @since 1.0.0
+ */
 public class CalculatorTest {
 
     @Test

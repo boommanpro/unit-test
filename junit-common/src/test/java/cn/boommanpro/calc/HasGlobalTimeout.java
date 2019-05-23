@@ -8,6 +8,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * HasGlobalTimeout
+ *
  * @author <a href="mailto:boommanpro@gmail.com">BoomManPro</a>
  * @data 2019/5/23 19:51
  * @from https://github.com/junit-team/junit4/wiki/Timeout-for-tests
