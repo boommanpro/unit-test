@@ -46,9 +46,14 @@
                             <head>描述信息</head>
                         </tag>
                         <tag>
-                            <name>create</name>
+                            <name>data</name>
                             <placement>a</placement>
                             <head>创建时间</head>
+                        </tag>
+                        <tag>
+                            <name>from</name>
+                            <placement>a</placement>
+                            <head>源自于</head>
                         </tag>
                     </tags>
                 </configuration>
