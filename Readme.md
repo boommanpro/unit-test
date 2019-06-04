@@ -12,3 +12,9 @@ https://howtodoinjava.com/spring-boot2/spring-boot-mockito-junit-example/
 
 Spring Boot下的TDD（测试驱动开发）
 https://cloud.tencent.com/developer/article/1082740
+
+Junit Test 语法
+
+
+DataJpaTest 语法
+
