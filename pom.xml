@@ -17,7 +17,6 @@
 
     <modules>
         <module>junit-common</module>
-        <module>junit-h2</module>
         <module>junit-project</module>
     </modules>
     <dependencies>
