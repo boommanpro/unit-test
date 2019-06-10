@@ -23,9 +23,11 @@ import static junit.framework.TestCase.assertEquals;
 import static org.mockito.Mockito.*;
 
 /**
+ * AccountService单元测试
  * @author <a href="mailto:boommanpro@gmail.com">BoomManPro</a>
  * @date 2019/6/4 10:55
  * @created by BoomManPro
+ * @link https://howtodoinjava.com/spring-boot2/spring-boot-mockito-junit-example/
  */
 @RunWith(MockitoJUnitRunner.class)
 public class AccountServiceTest {
