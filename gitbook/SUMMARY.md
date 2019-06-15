@@ -7,6 +7,6 @@
 * [Spring单元测试](spring/README.md)
     * [dao](spring/dao.md)
     * [service](spring/service.md)
-    * [controller](spring/controller/controller.md)
+    * [controller](spring/controller.md)
 * [个人介绍](personal/README.md)
 
