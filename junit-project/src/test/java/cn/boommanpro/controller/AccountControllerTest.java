@@ -166,7 +166,7 @@ public class AccountControllerTest {
     @Test
     public void delete() {
         try {
-            this.mockMvc.perform(MockMvcRequestBuilders.post(PREFIX+"/delete"))
+            this.mockMvc.perform(MockMvcRequestBuilders.post(PREFIX+"/delete").param("accountId","1"))
                     .andExpect(MockMvcResultMatchers.status().isOk())
                     .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8));
 
