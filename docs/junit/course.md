@@ -23,4 +23,4 @@ Junit中以注解为主，学会大部分注解你就可以使用Junit的功能�
 
 选中当前类的类名右键
 
-![step1](https://raw.githubusercontent.com/BoomManPro/unit-test/master/gitbook/images/junit-1.png)
+![step1](https://raw.githubusercontent.com/BoomManPro/unit-test/docs/images/junit-1.png)
