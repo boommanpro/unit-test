@@ -14,12 +14,12 @@ Java在我们的认知中只有 pasvm,main方法可以执行，为什么加上@T
 ## 原理讲解
 
 1.在IDEA中搜索 idea-junit.jar
-![step1](https://raw.githubusercontent.com/BoomManPro/unit-test/docs/images/junit-2.png)
+![step1](https://raw.githubusercontent.com/BoomManPro/unit-test/master/docs/images/junit-2.png)
 2.在当前项目中通过如图引入
-![step2](https://raw.githubusercontent.com/BoomManPro/unit-test/docs/images/junit-3.png)
+![step2](https://raw.githubusercontent.com/BoomManPro/unit-test/master/docs/images/junit-3.png)
 3.双击debug中main最后一栏 从源头看起
 
-![step3](https://raw.githubusercontent.com/BoomManPro/unit-test/docs/images/junit-4.png)
+![step3](https://raw.githubusercontent.com/BoomManPro/unit-test/master/docs/images/junit-4.png)
 
 ## 简单阐述
 
@@ -27,7 +27,7 @@ Java在我们的认知中只有 pasvm,main方法可以执行，为什么加上@T
 如果我们的IDEA有一天不能执行@Test，你首先先查看是否有Junit依赖，其次查询IDEA的Plugs是否有Junit插件
 
 具体插件详情:
-![plugins](https://raw.githubusercontent.com/BoomManPro/unit-test/docs/images/juit-plugins-for-idea.png)
+![plugins](https://raw.githubusercontent.com/BoomManPro/unit-test/master/docs/images/juit-plugins-for-idea.png)
 
 ## 写在末尾
 
