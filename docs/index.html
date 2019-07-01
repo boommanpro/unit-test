@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="stastic/docsify/lib/themes/theme-simple.css">
   <!-- Theme: Vue (latest v0.x.x) -->
 <!--    <link rel="stylesheet" href="stastic/docsify/lib/themes/vue.css">-->
+<!--gitalk.css-->
+  <link rel="stylesheet" href="stastic/docsify/lib/themes/gitalk.css">
 </head>
 <body>
   <div id="app">Please wait...</div>
@@ -66,5 +68,19 @@
   <!--支持复制到剪切板-->
   <script src="stastic/docsify/lib/plugins/docsify-copy-code.min.js"></script>
 
+
+  <script src="stastic/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="stastic/docsify/lib/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: 'a73701901a94c54011b9',
+      clientSecret: 'd9f07ff7df5e9ed5c149840ae32b6b73cce67eae',
+      repo: 'unit-test',
+      owner: 'BoomManPro',
+      admin: ['BoomManPro'],
+      // facebook-like distraction free mode
+      distractionFreeMode: false
+    })
+  </script>
 </body>
 </html>
