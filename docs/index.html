@@ -68,11 +68,12 @@
   <!--支持复制到剪切板-->
   <script src="stastic/docsify/lib/plugins/docsify-copy-code.min.js"></script>
 
-
-  <script src="stastic/docsify/lib/plugins/gitalk.min.js"></script>
+  <!--修正bug-->
+  <!--  <script src="stastic/docsify/lib/plugins/gitalk.min.js"></script>-->
   <script src="stastic/docsify/lib/gitalk/dist/gitalk.min.js"></script>
+  <script src="stastic/docsify/lib/md5.min.js"></script>
   <script>
-    const gitalk = new Gitalk({
+    const gittalk_options = {
       clientID: 'a73701901a94c54011b9',
       clientSecret: 'd9f07ff7df5e9ed5c149840ae32b6b73cce67eae',
       repo: 'unit-test',
@@ -80,7 +81,43 @@
       admin: ['BoomManPro'],
       // facebook-like distraction free mode
       distractionFreeMode: false
-    })
+    };
+    function render_gitalk(elem_name) {
+      gittalk_options.id = md5(location.href.split('?')[0])
+      console.log('url='+location.href)
+      console.log('id='+gittalk_options.id)
+      delete window.gitalk
+      window.gitalk = new Gitalk(gittalk_options)
+      window.gitalk.render(elem_name)
+    }
+    (function () {
+      function install(hook) {
+        var dom = Docsify.dom;
+
+        hook.mounted(function (_) {
+          var div = dom.create('div');
+          div.id = 'gitalk-container';
+          var main = dom.getNode('#main');
+          div.style = "width: " + (main.clientWidth) + "px; margin: 0 auto 20px;";
+          dom.appendTo(dom.find('.content'), div);
+          /*
+          var script = dom.create('script');
+          var content = "render_gitalk('gitalk-container')"; // "gitalk.render('gitalk-container')";
+          script.textContent = content;
+          dom.appendTo(dom.body, script);
+          */
+          console.log('docsify mounted')
+        });
+
+        hook.doneEach(function() {
+          console.log('docsify doneEach')
+          var container = dom.getNode('#gitalk-container');
+          container.textContent = ''
+          render_gitalk('gitalk-container')
+        })
+      }
+      $docsify.plugins = [].concat(install, $docsify.plugins);
+    }());
   </script>
 </body>
 </html>
