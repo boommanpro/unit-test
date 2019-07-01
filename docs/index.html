@@ -88,22 +88,22 @@
     };
 
     function render_gitalk(elem_name) {
-        gittalk_options.id = md5(location.href.split('?')[0])
-        console.log('url=' + location.href)
-        console.log('id=' + gittalk_options.id)
-        delete window.gitalk
-        window.gitalk = new Gitalk(gittalk_options)
+        gittalk_options.id = md5(location.href.split('?')[0]);
+        // console.log('url=' + location.href)
+        // console.log('id=' + gittalk_options.id)
+        delete window.gitalk;
+        window.gitalk = new Gitalk(gittalk_options);
         window.gitalk.render(elem_name)
     }
 
     (function () {
         function install(hook) {
-            var dom = Docsify.dom;
+            let dom = Docsify.dom;
 
             hook.mounted(function (_) {
-                var div = dom.create('div');
+                let div = dom.create('div');
                 div.id = 'gitalk-container';
-                var main = dom.getNode('#main');
+                let main = dom.getNode('#main');
                 div.style = "width: " + (main.clientWidth) + "px; margin: 0 auto 20px;";
                 dom.appendTo(dom.find('.content'), div);
                 /*
@@ -112,14 +112,14 @@
                 script.textContent = content;
                 dom.appendTo(dom.body, script);
                 */
-                console.log('docsify mounted')
+                // console.log('docsify mounted')
             });
 
             hook.doneEach(function () {
-                console.log('docsify doneEach')
-                var container = dom.getNode('#gitalk-container');
-                container.textContent = ''
-                render_gitalk('gitalk-container')
+                // console.log('docsify doneEach')
+                let container = dom.getNode('#gitalk-container');
+                container.textContent = '';
+                render_gitalk('gitalk-container');
             })
         }
 
