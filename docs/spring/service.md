@@ -44,9 +44,11 @@ MockitoJUnitRunner类自动初始化所​​有使用@Mock和@InjectMocks注释
 ```java
 
 ```
+
 2. MockitoAnnotations.initMocks() method
 如果我们不使用MockitoJUnitRunner类方法，那么我们可以使用静态方法MockitoAnnotations.initMocks（）。
 在初始化junit测试时，此方法也初始化模拟对象。
+
 ```java
 
 ```
@@ -55,10 +57,12 @@ MockitoJUnitRunner类自动初始化所​​有使用@Mock和@InjectMocks注释
 @InjectMocks还创建了模拟实现，另外注入了用注释@Mock标记的依赖模拟。
 
 在上面的示例中，我们使用@InjectMocks注释了AccountService类，因此mockito将为AccountService类创建模拟对象，并将AccountDao的模拟依赖项注入其中。
+
 三、 JUnit tests using Mockito
 
 
 1.model layer class
+
 ```java
 import lombok.AllArgsConstructor;
 import lombok.Builder;
