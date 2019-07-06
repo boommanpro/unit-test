@@ -7,8 +7,8 @@ JUnit is a simple framework to write repeatable tests. It is an instance of the 
 
 
 
-- to [course](/unit-test/junit/course.html)
+- to [course](junit/course)
 
-- to [theory](/unit-test/junit/theory.html)
+- to [theory](junit/theory)
 
 
