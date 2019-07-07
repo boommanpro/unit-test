@@ -42,7 +42,11 @@ AccountService的调用依赖于AccountDao
 MockitoJUnitRunner类自动初始化所​​有使用@Mock和@InjectMocks注释注释的对象。
 
 ```java
+    @InjectMocks
+    AccountServiceImpl accountService;
 
+    @Mock
+    AccountDao accountDao;
 ```
 
 2. MockitoAnnotations.initMocks() method
@@ -50,7 +54,10 @@ MockitoJUnitRunner类自动初始化所​​有使用@Mock和@InjectMocks注释
 在初始化junit测试时，此方法也初始化模拟对象。
 
 ```java
-
+@RunWith(MockitoJUnitRunner.class)
+public class AccountServiceTest {
+   
+}
 ```
 3. @Mock vs @InjectMocks
 @Mock注释为其注释的类创建模拟实现。

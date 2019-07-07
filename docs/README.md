@@ -24,5 +24,6 @@
 ​       常见的接口测试方法有 
 
 ​              1.PostMan
+
 ​              2.Selenium （ 美 /sə'linɪəm/  ）
 
